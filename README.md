@@ -2,6 +2,10 @@
 
 ## elasticsearch with ik
 
-## elasticsearch 5.3.0
+## Author 
 
-## Author zhanglinjie
+zhanglinjie
+
+## Usage
+
+docker-compose -f docker-compose.yml -p elasticsearch up -d
