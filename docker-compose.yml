@@ -1,0 +1,16 @@
+# docker-compose -f docker-compose.yml -p elasticsearch up -d
+
+version: '3'
+services:
+  elasticsearch:
+    image: registry-internal.cn-hangzhou.aliyuncs.com/cbnweekly/elasticsearch
+    restart: always
+    ports:
+      - '9200:9200'
+    volumes:
+      - /home/hugo/elasticsearch/data/:/usr/share/elasticsearch/data/
+    environment:
+      - network.host=0.0.0.0
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+      - http.cors.enabled=true
+      - http.cors.allow-origin="*"
